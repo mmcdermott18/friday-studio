@@ -7,7 +7,7 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -96,11 +96,112 @@ textarea {
  /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+::selection {
+  background: greenyellow;
+}
+::-moz-selection {
+  background: greenyellow;
+}
+html {font-size: 16px;}
 
+body {
+  margin: 0;
+  font-family: bureau-grot, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #444;
+}
+#stripe {
+  width: 110vw;
+  height: 0;
+  border-top: 20px solid greenyellow;
+  position: fixed;
+  top: 0;
+  left: -5vw;
+}
+main {
+  width: 95vw;
+  margin: 50px auto 0;
+}
+section {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 3vw;
+  margin: 50px 0;
+}
+.day {
+  padding: 15px;
+  border: 3px solid #444;
+  box-shadow: 6px 6px GreenYellow ;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all .5s ease;
+}
+.day:hover {
+  position: relative;
+  /* border: 3px solid GreenYellow; */
+  background-color: GreenYellow;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0 0 GreenYellow ;
+}
+.day:nth-child(3n+3) {
+  margin-right: 0;
+}
+.room {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+.print {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+p {margin-bottom: 1.25em;}
+.description {
+  margin-bottom: 50px;
+}
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.15;
+  font-family: bureau-grot, sans-serif;
+}
+h1 {
+  margin-top: 0;
+  font-size: 5.052em;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 700;
+  -webkit-text-stroke: 3px #444;
+  color: white;
+}
 
+h2 {
+  font-size: 2.441em;
+  text-transform: uppercase;
+  letter-spacing: .1px;
+  font-weight: 700;
+  margin-top: .25rem;
+}
 
+h3 {font-size: 1.953em;}
 
+h4 {font-size: 1.563em;}
 
+h5 {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  letter-spacing: .1px;
+}
+
+small, .text-small {font-size: 0.8em;}
 
 
 
@@ -192,17 +293,77 @@ textarea {
   clear: both;
 }
 
- 
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-   @media only screen and (min-width: 35em) {
+@media only screen and (min-width: 768px) {
     /* Style adjustments for viewports that meet the condition */
+    main {
+      width: 95vw;
+      margin: 50px auto 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 46.25vw 46.25vw;
+      grid-gap: 2.5vw 2.5vw;
+      margin: 50px 0;
+    }
 }
-
+@media only screen and (min-width: 1024px) {
+    /* Style adjustments for viewports that meet the condition */
+    main {
+      width: 95vw;
+      margin: 50px auto 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 30vw 30vw 30vw;
+      grid-gap: 2.5vw 2.5vw;
+      margin: 50px 0;
+    }
+    h1 {
+      font-size: 6.052em;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    /* Style adjustments for viewports that meet the condition */
+    main {
+      width: 80vw;
+      margin: 50px auto 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 25vw 25vw 25vw;
+      grid-gap: 2.5vw 2.5vw;
+      margin: 50px 0;
+    }
+    #stripe {
+      width: 0;
+      height: 110vh;
+      border-top: none;
+      border-left: 20px solid greenyellow;
+      position: fixed;
+      top: -5vh;
+      left: 0;
+    }
+}
+@media only screen and (min-width: 1800px) {
+    /* Style adjustments for viewports that meet the condition */
+    main {
+      width: 87.5vw;
+      margin: 50px auto 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 20vw 20vw 20vw 20vw;
+      grid-gap: 2.5vw 2.5vw;
+      margin: 50px 0;
+    }
+}
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),
@@ -210,7 +371,7 @@ textarea {
     /* Style adjustments for high resolution devices */
 }
 
- 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -286,5 +447,3 @@ textarea {
         page-break-after: avoid;
     }
 }
-
-
