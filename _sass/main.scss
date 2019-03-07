@@ -118,21 +118,42 @@ body {
   line-height: 1.45;
   background-color: $light-color;
   color: $dark-color;
+  width: 100vw;
+  overflow-x: hidden;
 }
 .interior {
   background-color: $primary-color;
 }
 #stripe {
-  width: 110vw;
-  height: 0;
-  border-top: 20px solid $primary-color;
+  width: 100vw;
+  background-color: $primary-color;
+  border-bottom: 20px solid $primary-color;
   position: absolute;
-  top: 0;
-  left: -5vw;
+  bottom: calc(100vh - 20px);
+  left: 0;
+  z-index: 1;
+  transition: bottom .5s ease;
+  cursor: pointer;
 }
-main {
+#stripe.move-stripe {
+  bottom: 90vh;
+}
+.small-screen {
+  display: inline-block;
+}
+.large-screen {
+  display: none;
+}
+.arrow {
+  position: absolute;
+  bottom: -30px;
+  right: 49vw;
+  font-size: 1.7rem;
+}
+main, .about {
   width: 95vw;
-  margin: 50px auto 0;
+  margin: 50px auto;
+  transition: margin-top .5s ease;
 }
 section {
   display: grid;
@@ -175,6 +196,10 @@ section {
   bottom: 15px;
   right: 15px;
   cursor: pointer;
+}
+footer {
+  border-top: 20px solid $primary-color;
+  margin: 0 0 50px;
 }
 a, a:hover, a:active, a:visited {
   color: $dark-color;
@@ -345,9 +370,8 @@ small, .text-small {
 
 @media only screen and (min-width: 768px) {
     /* Style adjustments for viewports that meet the condition */
-    main {
+    main, .about {
       width: 95vw;
-      margin: 50px auto 0;
     }
     .individual {
       width: 75%;
@@ -364,9 +388,8 @@ small, .text-small {
 }
 @media only screen and (min-width: 1024px) {
     /* Style adjustments for viewports that meet the condition */
-    main {
+    main, .about {
       width: 95vw;
-      margin: 50px auto 0;
     }
     .individual {
       width: 50%;
@@ -389,7 +412,9 @@ small, .text-small {
     /* Style adjustments for viewports that meet the condition */
     main {
       width: 80vw;
-      margin: 50px auto 0;
+      position: relative;
+      left: 0;
+      transition: all .5s ease;
     }
     section {
       display: grid;
@@ -397,13 +422,34 @@ small, .text-small {
       grid-gap: 2.5vw 2.5vw;
       margin: 50px 0;
     }
+    .about {
+      width: 500px;
+      padding: 40px;
+    }
     #stripe {
-      width: 0;
-      height: 110vh;
-      border-top: none;
-      border-left: 20px solid $primary-color;
+      width: 500px;
+      height: 100vh;
+      border-bottom: none;
+      right: 20px solid $primary-color;
       position: fixed;
-      top: -5vh;
+      top: 0;
+      left: -480px;
+      transition: left .5s ease;
+    }
+    .small-screen {
+      display: none;
+    }
+    .large-screen {
+      display: inline;
+    }
+    .arrow {
+      position: absolute;
+      top: 48vh;
+      right: 5px;
+      font-size: 2rem;
+    }
+
+    #stripe.clicked {
       left: 0;
     }
 }
@@ -411,7 +457,6 @@ small, .text-small {
     /* Style adjustments for viewports that meet the condition */
     main {
       width: 87.5vw;
-      margin: 50px auto 0;
     }
     section {
       display: grid;
