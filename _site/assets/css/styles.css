@@ -128,7 +128,7 @@ body {
   font-size: 1.7rem; }
 
 main, .about {
-  width: 95vw;
+  width: 92vw;
   margin: 50px auto;
   transition: margin-top .5s ease; }
 
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 5.052em;
+  font-size: 4.552em;
   text-transform: uppercase;
   letter-spacing: .1rem;
   font-weight: 700;
@@ -337,7 +337,10 @@ small, .text-small {
     margin: 50px 0; }
 
   .section-title {
-    grid-column: span 2; } }
+    grid-column: span 2; }
+
+  h1 {
+    font-size: 5.052em; } }
 @media only screen and (min-width: 1024px) {
   /* Style adjustments for viewports that meet the condition */
   main, .about {
