@@ -13,11 +13,14 @@
     <main>
       {% include header.html %}
       <article class="individual">
-        <h5 class="date text-small"> {{ page.date | date: "%-m.%-d.%y" }} // {{ page.time }}</h5>
+        <h5 class="date text-small"> {{ page.date | date: "%-m.%-d.%y" }} // {{ page.time }} // {{page.room}}</h5>
         <h2 class="event"> {{ page.title }} </h2>
         {{ content }}
       </article>
-      <a href="{{ "/" | relative_url}}" class="link-small">Back home</a>
+      <a href="{{ "/" | relative_url}}" class="link-small no-print">Back home</a>
+      <footer>
+        <p class="text-small">Visit <span class="print-underline">fridaystudio.org</span> for more information.</p>
+      </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="{{ "/assets/js/main.js" | relative_url }}" charset="utf-8"></script>
