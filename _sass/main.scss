@@ -485,7 +485,7 @@ small, .text-small {
       left: 0;
     }
     .section-title {
-      grid-column: span 4;
+      grid-column: span 3;
     }
 }
 @media only screen and (min-width: 1800px) {
@@ -498,6 +498,9 @@ small, .text-small {
       grid-template-columns: 20vw 20vw 20vw 20vw;
       grid-gap: 2.5vw 2.5vw;
       margin: 50px 0;
+    }
+    .section-title {
+      grid-column: span 4;
     }
 }
 @media print,
