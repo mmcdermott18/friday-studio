@@ -423,7 +423,10 @@ small, .text-small {
     border-right: 20px solid greenyellow;
     position: fixed;
     top: 0;
-    left: 0; } }
+    left: 0; }
+
+  .section-title {
+    grid-column: span 3; } }
 @media only screen and (min-width: 1800px) {
   /* Style adjustments for viewports that meet the condition */
   main {
@@ -433,7 +436,10 @@ small, .text-small {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw;
     grid-gap: 2.5vw 2.5vw;
-    margin: 50px 0; } }
+    margin: 50px 0; }
+
+  .section-title {
+    grid-column: span 4; } }
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
 /* ==========================================================================
