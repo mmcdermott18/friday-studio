@@ -101,25 +101,19 @@ body {
 .interior {
   background-color: greenyellow; }
 
-header {
-  position: relative; }
-
-nav {
-  position: absolute;
-  bottom: 0;
-  right: 0; }
-
 ul {
   text-decoration: none;
   list-style-type: none;
-  text-align: right; }
+  margin: 0;
+  padding: 0; }
 
 li {
-  padding: 0;
+  padding: 0 25px 0 0;
   margin: 15px 0 0;
   text-transform: uppercase;
   letter-spacing: .05rem;
-  font-weight: bold; }
+  font-weight: bold;
+  float: left; }
 
 li a {
   border-bottom: 3px solid #444444; }
@@ -347,7 +341,30 @@ small, .text-small {
    ========================================================================== */
 @media only screen and (min-width: 520px) {
   .head-contain {
-    width: 75%; } }
+    width: 75%; }
+
+  header {
+    position: relative; }
+
+  nav {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    margin: initial;
+    padding: initial; }
+
+  ul {
+    text-decoration: none;
+    list-style-type: none;
+    text-align: right; }
+
+  li {
+    padding: 0;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    font-weight: bold;
+    float: none; } }
 @media only screen and (min-width: 630px) {
   .head-contain {
     width: 100%; }
