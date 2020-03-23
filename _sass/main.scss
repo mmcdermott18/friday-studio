@@ -143,7 +143,7 @@ li {
   font-weight: bold;
   float: left;
 }
-li a {
+li a, .interior a {
   border-bottom: 3px solid $dark-color;
 }
 li a:hover {
